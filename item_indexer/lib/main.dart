@@ -20,12 +20,16 @@ Future<void> main() async {
     store: Store<AppState>(
       appReducer,
       initialState: AppState.loading(),
-      middleware: createStoreTodosMiddleware(LocalStorageRepository(
-        localStorage: KeyValueStorage(
-          'redux',
-          FlutterKeyValueStore(await SharedPreferences.getInstance()),
+      middleware: [
+        ...createStoreTodosMiddleware(
+          LocalStorageRepository(
+            localStorage: KeyValueStorage(
+              'redux',
+              FlutterKeyValueStore(await SharedPreferences.getInstance()),
+            )
+          )
         ),
-      )),
+      ]
     ),
   ));
 }
