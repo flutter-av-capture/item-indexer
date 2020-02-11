@@ -23,11 +23,11 @@ dependencies:
   redux: ^3.0.0
   flutter_redux: ^0.5.3
   app_core:
-    path: ./app_core
+    path: ../app_core
   repository_core:
-    path: ./repository_core
+    path: ../repository_core
   repository_local_storage:
-    path: ./repository_local_storage
+    path: ../repository_local_storage
   key_value_store_flutter:
   key_value_store_web:
   shared_preferences:
@@ -40,7 +40,7 @@ dev_dependencies:
   test:
   mockito:
   integration_tests:
-    path: ./integration_tests
+    path: ../integration_tests
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
