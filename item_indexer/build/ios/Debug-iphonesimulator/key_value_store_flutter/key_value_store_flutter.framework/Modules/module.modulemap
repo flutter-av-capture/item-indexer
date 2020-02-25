@@ -1,0 +1,6 @@
+framework module key_value_store_flutter {
+  umbrella header "key_value_store_flutter-umbrella.h"
+
+  export *
+  module * { export * }
+}
