@@ -9,3 +9,4 @@ export 'src/todo_entity.dart';
 export 'src/todos_repository.dart';
 export 'src/user_entity.dart';
 export 'src/user_repository.dart';
+export 'src/item_entity.dart';

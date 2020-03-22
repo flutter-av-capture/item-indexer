@@ -5,13 +5,13 @@ class ItemEntity {
   final String name;
   final String bin;
   final String description;
-  final bool isCheckedOut;
+  final bool checkedOut;
 
-  ItemEntity(this.id, this.name, this.bin, this.description, this.isCheckedOut);
+  ItemEntity(this.id, this.name, this.bin, this.description, this.checkedOut);
 
   @override
   int get hashCode =>
-      id.hashCode ^ name.hashCode ^ bin.hashCode ^ description.hashCode ^ isCheckedOut.hashCode;
+      id.hashCode ^ name.hashCode ^ bin.hashCode ^ description.hashCode ^ checkedOut.hashCode;
 
   @override
   bool operator ==(Object other) =>
@@ -29,13 +29,13 @@ class ItemEntity {
       'name': name,
       'bin': bin,
       'description': description,
-      'isCheckedOut': isCheckedOut
+      'checkedOut': checkedOut
     };
   }
 
   @override
   String toString() {
-    return 'ItemEntity{id: $id, name: $name, bin: $bin, description: $description, isCheckedOut: $isCheckedOut}';
+    return 'ItemEntity{id: $id, name: $name, bin: $bin, description: $description, checkedOut: $checkedOut}';
   }
 
   static ItemEntity fromJson(Map<String, Object> json) {
@@ -44,7 +44,7 @@ class ItemEntity {
       json['name'] as String,
       json['bin'] as String,
       json['description'] as String,
-      json['isCheckedOut'] as bool
+      json['checkedOut'] as bool
     );
   }
 }

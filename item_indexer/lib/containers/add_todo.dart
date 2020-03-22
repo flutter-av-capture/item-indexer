@@ -18,6 +18,10 @@ class AddTodo extends StatelessWidget {
     return StoreConnector<AppState, OnSaveCallback>(
       converter: (Store<AppState> store) {
         return (task, note) {
+          store.dispatch(AddItemAction(Item(
+            "keys",
+            "bin1"
+          )));
           store.dispatch(AddTodoAction(Todo(
             task,
             note: note,

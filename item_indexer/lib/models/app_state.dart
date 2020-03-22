@@ -8,13 +8,16 @@ import 'package:redux_sample/models/models.dart';
 @immutable
 class AppState {
   final bool isLoading;
+  final List<Item> items;
   final List<Todo> todos;
   final AppTab activeTab;
   final VisibilityFilter activeFilter;
 
+
   AppState(
       {this.isLoading = false,
       this.todos = const [],
+      this.items = const [],
       this.activeTab = AppTab.todos,
       this.activeFilter = VisibilityFilter.all});
 
@@ -48,11 +51,12 @@ class AppState {
           runtimeType == other.runtimeType &&
           isLoading == other.isLoading &&
           todos == other.todos &&
+          items == other.items &&
           activeTab == other.activeTab &&
           activeFilter == other.activeFilter;
 
   @override
   String toString() {
-    return 'AppState{isLoading: $isLoading, todos: $todos, activeTab: $activeTab, activeFilter: $activeFilter}';
+    return 'AppState{isLoading: $isLoading, todos: $todos, items:$items, activeTab: $activeTab, activeFilter: $activeFilter}';
   }
 }

@@ -78,3 +78,14 @@ class UpdateTabAction {
     return 'UpdateTabAction{newTab: $newTab}';
   }
 }
+
+class AddItemAction {
+  final Item item;
+
+  AddItemAction(this.item);
+
+  @override
+  String toString() {
+    return 'AddTodoAction{todo: $item}';
+  }
+}

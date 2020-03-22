@@ -46,3 +46,12 @@ Optional<Todo> todoSelector(List<Todo> todos, String id) {
     return Optional.absent();
   }
 }
+
+
+Optional<Item> itemSelector(List<Item> items, String id) {
+  try {
+    return Optional.of(items.firstWhere((item) => item.id == id));
+  } catch (e) {
+    return Optional.absent();
+  }
+}
