@@ -1,8 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:item_indexer/keys.dart';
-import 'package:item_indexer/models/item.dart';
-import 'package:myapp/keys.dart';
+import 'package:redux_sample/models/item.dart';
+import 'package:redux_sample/presentation/keys.dart';
+
+import 'keys.dart';
+import 'keys.dart';
 
 typedef OnSaveCallback = void Function(String id, String bin);
 
@@ -86,33 +88,19 @@ class _AddItemScreenState extends State<AddItemScreen> {
             ),
             Padding( 
               padding: const EdgeInsets.symmetric(vertical: 16.0),
-      //         floatingActionButton: FloatingActionButton(
-      //         key:
-      //             isEditing ? ArchSampleKeys.saveTodoFab : ArchSampleKeys.saveNewTodo,
-      //         tooltip: isEditing ? localizations.saveChanges : localizations.addItem,
-      //         child: Icon(isEditing ? Icons.check : Icons.add),
-      //         onPressed: () {
-      //           if (_formKey.currentState.validate()) {
-      //             _formKey.currentState.save();
-      //             widget.onSave(_task, _note);
-
-      //             Navigator.pop(context);
-      //           }
-      //         },
-      // ),
               child: RaisedButton(
+                key: isEditing ? ItemIndexerKeys.saveItemFab : ItemIndexerKeys.saveNewItem,
+                child: Icon(isEditing ? Icons.check : Icons.add),
                 onPressed: () {
-                  // Validate returns true if the form is valid, otherwise false.
                   if (_formKey.currentState.validate()) {
-                  // If the form is valid, display a snackbar. In the real world,
-                  // you'd often call a server or save the information in a database.
                   // developer.log('form submitted', name: 'addItem.category');
-                  Scaffold
-                    .of(context)
-                    .showSnackBar(SnackBar(content: Text('Processing Data')));
+                  _formKey.currentState.save();
+                  widget.onSave(_id, _bin);
+
+                  Navigator.pop(context);
                 }
               },
-              child: Text('Submit'),
+              // child: Text('Submit'),
             ),
           ),  
         ]

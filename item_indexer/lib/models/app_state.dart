@@ -18,7 +18,7 @@ class AppState {
       {this.isLoading = false,
       this.todos = const [],
       this.items = const [],
-      this.activeTab = AppTab.todos,
+      this.activeTab = AppTab.items,
       this.activeFilter = VisibilityFilter.all});
 
   factory AppState.loading() => AppState(isLoading: true);

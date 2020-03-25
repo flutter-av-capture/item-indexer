@@ -3,7 +3,9 @@ import 'package:flutter/semantics.dart';
 import 'package:flutter/services.dart';
 import 'dart:developer' as developer;
 
-import 'package:item_indexer/presentation/home_screen.dart';
+import 'package:redux_sample/presentation/home_screen.dart';
+
+import 'home_screen.dart';
 
 void main() => runApp(MyApp());
 

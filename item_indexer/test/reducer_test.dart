@@ -109,12 +109,12 @@ void main() {
     test('should update the AppTab', () {
       final store = Store<AppState>(
         appReducer,
-        initialState: AppState(activeTab: AppTab.todos),
+        initialState: AppState(activeTab: AppTab.items),
       );
 
-      store.dispatch(UpdateTabAction(AppTab.stats));
+      store.dispatch(UpdateTabAction(AppTab.list));
 
-      expect(store.state.activeTab, AppTab.stats);
+      expect(store.state.activeTab, AppTab.list);
     });
   });
 }
