@@ -4,10 +4,10 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:redux/redux.dart';
-import 'package:redux_sample/actions/actions.dart';
-import 'package:redux_sample/models/models.dart';
-import 'package:redux_sample/reducers/app_state_reducer.dart';
-import 'package:redux_sample/selectors/selectors.dart';
+import 'package:item_indexer/actions/actions.dart';
+import 'package:item_indexer/models/models.dart';
+import 'package:item_indexer/reducers/app_state_reducer.dart';
+import 'package:item_indexer/selectors/selectors.dart';
 
 void main() {
   group('State Reducer', () {

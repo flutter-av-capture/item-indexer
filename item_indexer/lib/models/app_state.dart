@@ -3,7 +3,7 @@
 // in the LICENSE file.
 
 import 'package:meta/meta.dart';
-import 'package:redux_sample/models/models.dart';
+import 'package:item_indexer/models/models.dart';
 
 @immutable
 class AppState {

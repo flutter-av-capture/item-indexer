@@ -3,7 +3,7 @@
 // in the LICENSE file.
 
 import 'package:app_core/app_core.dart';
-import 'package:redux_sample/models/models.dart';
+import 'package:item_indexer/models/models.dart';
 
 List<Todo> todosSelector(AppState state) => state.todos;
 

@@ -1,8 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:item_indexer/keys.dart';
-import 'package:item_indexer/models/item.dart';
-import 'package:myapp/keys.dart';
+// import 'package:item_indexer/keys.dart';
+import 'package:item_indexer/models/models.dart';
+
+import 'package:item_indexer/presentation/keys.dart';
+
 
 typedef OnSaveCallback = void Function(String id, String bin);
 

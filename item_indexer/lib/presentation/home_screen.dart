@@ -3,7 +3,7 @@
 // in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:item_indexer/keys.dart';
+import 'package:item_indexer/presentation/keys.dart';
 import 'package:item_indexer/presentation/add_item_screen.dart';
 import 'package:item_indexer/presentation/list_screen.dart';
 
@@ -26,8 +26,8 @@ class HomeScreenState extends State<HomeScreen> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
-    AddItemScreen(),
-    ListScreen(),
+    AddItemScreen()
+    //ListScreen(),
   ];
 
   void _onItemTapped(int index) {

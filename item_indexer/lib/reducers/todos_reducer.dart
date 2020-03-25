@@ -3,9 +3,9 @@
 // in the LICENSE file.
 
 import 'package:redux/redux.dart';
-import 'package:redux_sample/actions/actions.dart';
-import 'package:redux_sample/models/models.dart';
-import 'package:redux_sample/selectors/selectors.dart';
+import 'package:item_indexer/actions/actions.dart';
+import 'package:item_indexer/models/models.dart';
+import 'package:item_indexer/selectors/selectors.dart';
 
 final todosReducer = combineReducers<List<Todo>>([
   TypedReducer<List<Todo>, AddTodoAction>(_addTodo),

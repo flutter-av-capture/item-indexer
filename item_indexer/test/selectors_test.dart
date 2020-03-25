@@ -4,8 +4,8 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:quiver/core.dart';
-import 'package:redux_sample/models/models.dart';
-import 'package:redux_sample/selectors/selectors.dart';
+import 'package:item_indexer/models/models.dart';
+import 'package:item_indexer/selectors/selectors.dart';
 
 void main() {
   group('Selectors', () {

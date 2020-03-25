@@ -6,10 +6,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
-import 'package:redux_sample/actions/actions.dart';
-import 'package:redux_sample/models/models.dart';
-import 'package:redux_sample/presentation/details_screen.dart';
-import 'package:redux_sample/selectors/selectors.dart';
+import 'package:item_indexer/actions/actions.dart';
+import 'package:item_indexer/models/models.dart';
+import 'package:item_indexer/presentation/details_screen.dart';
+import 'package:item_indexer/selectors/selectors.dart';
 
 class TodoDetails extends StatelessWidget {
   final String id;

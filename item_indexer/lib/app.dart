@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
-import 'package:redux_sample/actions/actions.dart';
-import 'package:redux_sample/containers/add_todo.dart';
-import 'package:redux_sample/localization.dart';
-import 'package:redux_sample/models/models.dart';
-import 'package:redux_sample/presentation/home_screen.dart';
+import 'package:item_indexer/actions/actions.dart';
+import 'package:item_indexer/containers/add_todo.dart';
+import 'package:item_indexer/localization.dart';
+import 'package:item_indexer/models/models.dart';
+import 'package:item_indexer/presentation/home_screen.dart';
 import 'package:app_core/app_core.dart';
 
 class ReduxApp extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:item_indexer/keys.dart';
+import 'package:item_indexer/presentation/keys.dart';
 
 typedef OnSaveCallback = void Function(String task, String note);
 

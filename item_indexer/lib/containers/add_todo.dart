@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:app_core/app_core.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
-import 'package:redux_sample/actions/actions.dart';
-import 'package:redux_sample/models/models.dart';
-import 'package:redux_sample/presentation/add_edit_screen.dart';
+import 'package:item_indexer/actions/actions.dart';
+import 'package:item_indexer/models/models.dart';
+import 'package:item_indexer/presentation/add_edit_screen.dart';
 
 class AddTodo extends StatelessWidget {
   AddTodo({Key key}) : super(key: key);

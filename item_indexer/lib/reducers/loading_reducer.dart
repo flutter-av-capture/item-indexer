@@ -3,7 +3,7 @@
 // in the LICENSE file.
 
 import 'package:redux/redux.dart';
-import 'package:redux_sample/actions/actions.dart';
+import 'package:item_indexer/actions/actions.dart';
 
 final loadingReducer = combineReducers<bool>([
   TypedReducer<bool, TodosLoadedAction>(_setLoaded),
