@@ -18,19 +18,21 @@ class AppState {
       {this.isLoading = false,
       this.todos = const [],
       this.items = const [],
-      this.activeTab = AppTab.todos,
+      this.activeTab = AppTab.items,
       this.activeFilter = VisibilityFilter.all});
 
   factory AppState.loading() => AppState(isLoading: true);
 
   AppState copyWith({
     bool isLoading,
+    List<Item> items,
     List<Todo> todos,
     AppTab activeTab,
     VisibilityFilter activeFilter,
   }) {
     return AppState(
       isLoading: isLoading ?? this.isLoading,
+      items: items ?? this.items,
       todos: todos ?? this.todos,
       activeTab: activeTab ?? this.activeTab,
       activeFilter: activeFilter ?? this.activeFilter,
@@ -41,6 +43,7 @@ class AppState {
   int get hashCode =>
       isLoading.hashCode ^
       todos.hashCode ^
+      items.hashCode ^
       activeTab.hashCode ^
       activeFilter.hashCode;
 

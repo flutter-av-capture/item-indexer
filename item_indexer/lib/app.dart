@@ -35,6 +35,12 @@ class ReduxApp extends StatelessWidget {
           ArchSampleRoutes.addTodo: (context) {
             return AddTodo();
           },
+          ArchSampleRoutes.addItem: (context) {
+            // TODO: Add Kaitlyn's wrapper
+          },
+          ArchSampleRoutes.viewItems: (context) {
+
+          }
         },
       ),
     );
