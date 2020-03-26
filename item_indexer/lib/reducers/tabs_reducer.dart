@@ -11,5 +11,6 @@ final tabsReducer = combineReducers<AppTab>([
 ]);
 
 AppTab _activeTabReducer(AppTab activeTab, UpdateTabAction action) {
+  print("Updating new tab to $activeTab");
   return action.newTab;
 }

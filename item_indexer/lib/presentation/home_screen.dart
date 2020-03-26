@@ -4,6 +4,7 @@ import 'package:item_indexer/containers/active_tab.dart';
 import 'package:item_indexer/containers/extra_actions_container.dart';
 import 'package:item_indexer/containers/filter_selector.dart';
 import 'package:item_indexer/containers/filtered_todos.dart';
+import 'package:item_indexer/containers/list_screen.dart';
 import 'package:item_indexer/containers/stats.dart';
 import 'package:item_indexer/containers/tab_selector.dart';
 import 'package:item_indexer/localization.dart';
@@ -37,7 +38,7 @@ class HomeScreenState extends State<HomeScreen> {
               ExtraActionsContainer(),
             ],
           ), //TODO call Matthew's wrapper here
-          body: activeTab == AppTab.items ? FilteredTodos() : Stats(),
+          body: activeTab == AppTab.items ? ListScreenContainer() : Stats(),
           floatingActionButton: FloatingActionButton(
             key: ArchSampleKeys.addTodoFab,
             onPressed: () {

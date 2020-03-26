@@ -3,6 +3,8 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:item_indexer/actions/actions.dart';
 import 'package:item_indexer/containers/add_todo.dart';
+import 'package:item_indexer/containers/add_item.dart';
+import 'package:item_indexer/containers/list_screen.dart';
 import 'package:item_indexer/localization.dart';
 import 'package:item_indexer/models/models.dart';
 import 'package:item_indexer/presentation/home_screen.dart';
@@ -36,10 +38,10 @@ class ReduxApp extends StatelessWidget {
             return AddTodo();
           },
           ArchSampleRoutes.addItem: (context) {
-            // TODO: Add Kaitlyn's wrapper
+            return AddItem();
           },
           ArchSampleRoutes.viewItems: (context) {
-
+            return ListScreenContainer();
           }
         },
       ),

@@ -1,18 +1,19 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:item_indexer/presentation/keys.dart';
+import 'package:item_indexer/models/item.dart';
 
 typedef OnSaveCallback = void Function(String task, String note);
 
 class ListScreen extends StatefulWidget {
-  // final OnSaveCallback onSave;
-  // final Item item;           item in models.dart
-  
-  // ListScreen(
-  //     {Key key, @required this.onSave, @required this.item})
-  //     : super(key: key ?? ItemIndexerKeys.ListScreen);
-  // @override
-  // _ListScreenState createState() => _ListScreenState();
+  final OnSaveCallback onSave;
+  //final Item item;
+
+  ListScreen(
+    //Needs item still
+    {Key key, @required this.onSave})
+    : super(key: key ?? ItemIndexerKeys.itemList);
+    
 
   @override
   _ListScreenState createState() => _ListScreenState();
