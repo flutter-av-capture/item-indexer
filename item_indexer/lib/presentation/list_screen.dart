@@ -37,12 +37,14 @@ class _ListScreenState extends State<ListScreen> {
   Widget _buildItems(){
     return ListView.builder(
       padding: const EdgeInsets.all(16.0),
+      itemCount: items.length*2,
       itemBuilder: (context, i){
-        if (i.isOdd) return Divider();
+        /*if (i.isOdd) return Divider();
 
         final index = i ~/2;
-        if (index >= items.length){}
-        return _buildRow(items[index]);
+        return _buildRow(items[index]);*/
+        if (i.isOdd) return Divider();
+        return _buildRow(items[(i/2).round()]);
       }
     );
   }
