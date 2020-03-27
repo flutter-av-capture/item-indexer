@@ -6,6 +6,7 @@ import 'package:app_core/app_core.dart';
 import 'package:item_indexer/models/models.dart';
 
 List<Todo> todosSelector(AppState state) => state.todos;
+List<Item> itemsSelector(AppState state) => state.items;
 
 VisibilityFilter activeFilterSelector(AppState state) => state.activeFilter;
 

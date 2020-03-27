@@ -15,7 +15,6 @@ final itemsReducer = combineReducers<List<Item>>([
 // Action: Item 2
 // Return [Item 1, Item 2]
 List<Item> _addItem(List<Item> items, AddItemAction action) {
-  print(action);
-  print(items);
+  print("Adding item ${action.item.id} to bin ${action.item.bin}");
   return List.from(items)..add(action.item);
 }
