@@ -5,7 +5,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:app_core/app_core.dart';
-import 'package:redux_sample/models/models.dart';
+import 'package:item_indexer/models/models.dart';
 
 typedef OnSaveCallback = void Function(String task, String note);
 

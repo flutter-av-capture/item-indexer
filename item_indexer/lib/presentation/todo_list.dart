@@ -5,11 +5,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:app_core/app_core.dart';
-import 'package:redux_sample/containers/app_loading.dart';
-import 'package:redux_sample/containers/todo_details.dart';
-import 'package:redux_sample/models/models.dart';
-import 'package:redux_sample/presentation/loading_indicator.dart';
-import 'package:redux_sample/presentation/todo_item.dart';
+import 'package:item_indexer/containers/app_loading.dart';
+import 'package:item_indexer/containers/todo_details.dart';
+import 'package:item_indexer/models/models.dart';
+import 'package:item_indexer/presentation/loading_indicator.dart';
+import 'package:item_indexer/presentation/todo_item.dart';
 
 class TodoList extends StatelessWidget {
   final List<Todo> todos;

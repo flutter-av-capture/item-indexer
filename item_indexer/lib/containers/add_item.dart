@@ -2,39 +2,34 @@
 // Use of this source code is governed by the MIT license that can be found
 // in the LICENSE file.
 
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:app_core/app_core.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:item_indexer/actions/actions.dart';
 import 'package:item_indexer/models/models.dart';
-import 'package:item_indexer/presentation/add_edit_screen.dart';
+import 'package:item_indexer/presentation/add_item_screen.dart';
+import 'package:item_indexer/presentation/keys.dart';
 
-class EditTodo extends StatelessWidget {
-  final Todo todo;
-
-  EditTodo({this.todo, Key key}) : super(key: key);
+class AddItem extends StatelessWidget {
+  AddItem({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState, OnSaveCallback>(
       converter: (Store<AppState> store) {
-        return (task, note) {
-          store.dispatch(UpdateTodoAction(
-            todo.id,
-            todo.copyWith(
-              task: task,
-              note: note,
-            ),
-          ));
+        return (item, bin) {
+          store.dispatch(AddItemAction(Item(
+            item,
+            bin
+          )));
         };
       },
       builder: (BuildContext context, OnSaveCallback onSave) {
-        return AddEditScreen(
-          key: ArchSampleKeys.editTodoScreen,
+        return AddItemScreen(
+          key: ItemIndexerKeys.addItemScreen,
           onSave: onSave,
-          isEditing: true,
-          todo: todo,
+          isEditing: false,
         );
       },
     );

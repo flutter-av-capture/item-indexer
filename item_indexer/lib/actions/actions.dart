@@ -2,7 +2,7 @@
 // Use of this source code is governed by the MIT license that can be found
 // in the LICENSE file.
 
-import 'package:redux_sample/models/models.dart';
+import 'package:item_indexer/models/models.dart';
 
 class ClearCompletedAction {}
 
@@ -86,6 +86,28 @@ class AddItemAction {
 
   @override
   String toString() {
-    return 'AddTodoAction{todo: $item}';
+    return 'AddItemAction{Item: $item}';
+  }
+}
+
+class CheckoutItemAction {
+  final Item item;
+
+  CheckoutItemAction(this.item);
+
+  @override
+  String toString() {
+    return 'CheckoutItemAction{Item: $item}';
+  }
+}
+
+class CheckinItemAction {
+  final Item item;
+
+  CheckinItemAction(this.item);
+
+  @override
+  String toString() {
+    return 'CheckinItemAction{Item: $item}';
   }
 }

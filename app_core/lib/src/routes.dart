@@ -5,4 +5,6 @@
 class ArchSampleRoutes {
   static final home = '/';
   static final addTodo = '/addTodo';
+  static final addItem = '/addItem';
+  static final viewItems = '/viewItems';
 }

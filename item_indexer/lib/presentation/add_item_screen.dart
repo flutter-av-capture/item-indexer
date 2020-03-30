@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:item_indexer/keys.dart';
-import 'package:item_indexer/models/item.dart';
-import 'package:myapp/keys.dart';
+import 'package:app_core/app_core.dart';
+import 'package:item_indexer/presentation/keys.dart';
+import 'package:item_indexer/models/models.dart';
 
 typedef OnSaveCallback = void Function(String id, String bin);
 
@@ -40,83 +40,76 @@ class _AddItemScreenState extends State<AddItemScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // final localizations = ArchSampleLocalizations.of(context);
-    // final textTheme = Theme.of(context).textTheme;
-
-    return Form(
-      key: _formKey,
-      child: Column(
-        children: <Widget>[
-            TextFormField( 
-              initialValue: isEditing ? widget.item.id : '',
-              key: ItemIndexerKeys.idField,
-              autofocus: !isEditing,
-              controller: myController,
-              decoration: InputDecoration( 
-                labelText: 'Enter an item name'
-                // hintText: localizations.newItemHint,
+    final localizations = ArchSampleLocalizations.of(context);
+    final textTheme = Theme.of(context).textTheme;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          isEditing ? localizations.editTodo : localizations.addTodo,
+        ),
+      ),
+      body: Form(
+        key: _formKey,
+        child: Column(
+          children: [
+              TextFormField( 
+                initialValue: isEditing ? widget.item.id : '',
+                key: ItemIndexerKeys.idField,
+                autofocus: !isEditing,
+                //controller: myController,
+                decoration: InputDecoration( 
+                  labelText: 'Enter an item name'
+                  // hintText: localizations.newItemHint,
+                ),
+                validator: (value) {
+                  if (value.isEmpty) {
+                    // developer.log('no name', name: 'addItem.category');
+                    return 'Please enter some text';
+                  }
+                  return null;
+                  // return val.trim().isEmpty
+                  //       ? localizations.emptyTodoError
+                  //       : null;
+                },
+                onSaved: (value) => _id = value,
               ),
-              validator: (value) {
-                if (value.isEmpty) {
-                  // developer.log('no name', name: 'addItem.category');
-                  return 'Please enter some text';
-                }
-                return null;
-                // return val.trim().isEmpty
-                //       ? localizations.emptyTodoError
-                //       : null;
-              },
-              onSaved: (value) => _id = value,
-            ),
-            TextFormField(
-              initialValue: isEditing ? widget.item.bin : '',
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration( 
-                labelText: 'Enter a bin number'
-                // hintText: localizations.binHint,
+              TextFormField(
+                initialValue: isEditing ? widget.item.bin : '',
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration( 
+                  labelText: 'Enter a bin number'
+                  // hintText: localizations.binHint,
+                ),
+                validator: (value) {
+                  if (value.isEmpty) {
+                    // developer.log('no bin', name: 'addItem.category');
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+                onSaved: (value) => _bin = value,
               ),
-              validator: (value) {
-                if (value.isEmpty) {
-                  // developer.log('no bin', name: 'addItem.category');
-                  return 'Please enter some text';
-                }
-                return null;
-              },
-              onSaved: (value) => _bin = value,
-            ),
-            Padding( 
-              padding: const EdgeInsets.symmetric(vertical: 16.0),
-      //         floatingActionButton: FloatingActionButton(
-      //         key:
-      //             isEditing ? ArchSampleKeys.saveTodoFab : ArchSampleKeys.saveNewTodo,
-      //         tooltip: isEditing ? localizations.saveChanges : localizations.addItem,
-      //         child: Icon(isEditing ? Icons.check : Icons.add),
-      //         onPressed: () {
-      //           if (_formKey.currentState.validate()) {
-      //             _formKey.currentState.save();
-      //             widget.onSave(_task, _note);
+              Padding( 
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: RaisedButton(
+                  key: isEditing ? ItemIndexerKeys.saveItemFab : ItemIndexerKeys.saveNewItem,
+                  child: Icon(isEditing ? Icons.check : Icons.add),
+                  onPressed: () {
+                    if (_formKey.currentState.validate()) {
+                    // developer.log('form submitted', name: 'addItem.category');
+                    _formKey.currentState.save();
+                    widget.onSave(_id, _bin);
 
-      //             Navigator.pop(context);
-      //           }
-      //         },
-      // ),
-              child: RaisedButton(
-                onPressed: () {
-                  // Validate returns true if the form is valid, otherwise false.
-                  if (_formKey.currentState.validate()) {
-                  // If the form is valid, display a snackbar. In the real world,
-                  // you'd often call a server or save the information in a database.
-                  // developer.log('form submitted', name: 'addItem.category');
-                  Scaffold
-                    .of(context)
-                    .showSnackBar(SnackBar(content: Text('Processing Data')));
-                }
-              },
-              child: Text('Submit'),
-            ),
-          ),  
-        ]
-     )
+                    Navigator.pop(context);
+                  }
+                },
+                // child: Text('Submit'),
+              ),
+            ),  
+          ]
+      )
+    )
     );
+    
   }
 }

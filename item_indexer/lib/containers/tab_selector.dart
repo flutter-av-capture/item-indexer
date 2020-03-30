@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:app_core/app_core.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
-import 'package:redux_sample/actions/actions.dart';
-import 'package:redux_sample/models/models.dart';
+import 'package:item_indexer/actions/actions.dart';
+import 'package:item_indexer/models/models.dart';
 
 class TabSelector extends StatelessWidget {
   TabSelector({Key key}) : super(key: key);

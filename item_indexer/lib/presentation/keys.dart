@@ -22,15 +22,15 @@ class ItemIndexerKeys {
 
   // Tabs
   static const tabs = Key('__tabs__');
-  static const itemTab = Key('__todoTab__');
+  static const itemTab = Key('__itemTab__');
   static const listTab = Key('__statsTab__');
 
   // List
   static const listLoading = Key('__statsLoading__');
 
   // Add Screen
-  static const addItemScreen = Key('__addTodoScreen__');
-  static const saveNewItem = Key('__saveNewTodo__');
+  static const addItemScreen = Key('__addItemScreen__');
+  static const saveNewItem = Key('__saveNewItem__');
   static const idField = Key('__idField__');
   static const binField = Key('__binField__');
 

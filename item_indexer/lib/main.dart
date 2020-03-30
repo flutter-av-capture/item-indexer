@@ -5,8 +5,8 @@
 import 'package:flutter/material.dart';
 import 'package:key_value_store_flutter/key_value_store_flutter.dart';
 import 'package:redux/redux.dart';
-import 'package:redux_sample/app.dart';
-import 'package:redux_sample/reducers/app_state_reducer.dart';
+import 'package:item_indexer/app.dart';
+import 'package:item_indexer/reducers/app_state_reducer.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:repository_local_storage/repository_local_storage.dart';
 

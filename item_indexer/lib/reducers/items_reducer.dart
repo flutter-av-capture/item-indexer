@@ -3,16 +3,18 @@
 // in the LICENSE file.
 
 import 'package:redux/redux.dart';
-import 'package:redux_sample/actions/actions.dart';
-import 'package:redux_sample/models/models.dart';
-import 'package:redux_sample/selectors/selectors.dart';
+import 'package:item_indexer/actions/actions.dart';
+import 'package:item_indexer/models/models.dart';
+import 'package:item_indexer/selectors/selectors.dart';
 
 final itemsReducer = combineReducers<List<Item>>([
   TypedReducer<List<Item>, AddItemAction>(_addItem)
 ]);
 
+// [Item 1]
+// Action: Item 2
+// Return [Item 1, Item 2]
 List<Item> _addItem(List<Item> items, AddItemAction action) {
-  print(action);
-  print(items);
+  print("Adding item ${action.item.id} to bin ${action.item.bin}");
   return List.from(items)..add(action.item);
 }

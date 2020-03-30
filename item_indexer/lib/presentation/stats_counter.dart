@@ -6,8 +6,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:app_core/app_core.dart';
-import 'package:redux_sample/containers/app_loading.dart';
-import 'package:redux_sample/presentation/loading_indicator.dart';
+import 'package:item_indexer/containers/app_loading.dart';
+import 'package:item_indexer/presentation/loading_indicator.dart';
 
 class StatsCounter extends StatelessWidget {
   final int numActive;
