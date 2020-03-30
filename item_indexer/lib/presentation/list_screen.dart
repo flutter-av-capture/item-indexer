@@ -6,12 +6,14 @@ import 'package:item_indexer/models/item.dart';
 typedef OnSaveCallback = void Function(String task, String note);
 
 class ListScreen extends StatefulWidget {
-  final OnSaveCallback onSave;
-  //final Item item;
+  //final OnSaveCallback onSave;
+  final List<Item> items;
 
   ListScreen(
-    //Needs item still
-    {Key key, @required this.onSave})
+    {
+      Key key, 
+      //@required this.onSave,
+      @required this.items})
     : super(key: key ?? ItemIndexerKeys.itemList);
     
 
@@ -24,7 +26,8 @@ class _ListScreenState extends State<ListScreen> {
   // Create a global key that uniquely identifies the Form widget
   // and allows validation of the form.
   final _biggerFont = const TextStyle(fontSize: 18.0);
-  final items = ["Test", "Items", "name", "filler"];
+  //final items = ["Test", "Items", "name", "filler"];
+  List<Item> get items => widget.items;
 
   @override
   Widget build(BuildContext context) {
@@ -39,12 +42,8 @@ class _ListScreenState extends State<ListScreen> {
       padding: const EdgeInsets.all(16.0),
       itemCount: items.length*2,
       itemBuilder: (context, i){
-        /*if (i.isOdd) return Divider();
-
-        final index = i ~/2;
-        return _buildRow(items[index]);*/
         if (i.isOdd) return Divider();
-        return _buildRow(items[(i/2).round()]);
+        return _buildRow(items[(i/2).round()].toString());
       }
     );
   }

@@ -9,24 +9,39 @@ import 'package:redux/redux.dart';
 import 'package:item_indexer/models/models.dart';
 import 'package:item_indexer/presentation/list_screen.dart';
 import 'package:item_indexer/presentation/keys.dart';
+import 'package:item_indexer/selectors/selectors.dart';
 
 class ListScreenContainer extends StatelessWidget{
   ListScreenContainer({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<AppState, OnSaveCallback>(
+    return StoreConnector<AppState, _ViewModel>(
       distinct: true,
-      converter: (Store<AppState> store) {
-
-      },
-      builder: (BuildContext context, OnSaveCallback onSave) {
+      converter: _ViewModel.fromStore,
+      builder: (BuildContext context, _ViewModel vm) {
         return ListScreen(
           key: ItemIndexerKeys.itemList,
-          onSave: onSave,
+          items: vm.items,
           
         );
       },
     );
+  }
+}
+
+class _ViewModel{
+  final List<Item> items;
+
+
+  _ViewModel({
+    @required this.items,
+
+  });
+
+  static _ViewModel fromStore(Store<AppState> store) {
+    return _ViewModel(
+      items: itemsSelector(store.state),
+      );
   }
 }
