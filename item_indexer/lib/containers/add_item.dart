@@ -20,8 +20,8 @@ class AddItem extends StatelessWidget {
       converter: (Store<AppState> store) {
         return (item, bin) {
           store.dispatch(AddItemAction(Item(
-            "keys",
-            "bin1"
+            item,
+            bin
           )));
         };
       },

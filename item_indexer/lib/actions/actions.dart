@@ -86,6 +86,28 @@ class AddItemAction {
 
   @override
   String toString() {
-    return 'AddTodoAction{todo: $item}';
+    return 'AddItemAction{Item: $item}';
+  }
+}
+
+class CheckoutItemAction {
+  final Item item;
+
+  CheckoutItemAction(this.item);
+
+  @override
+  String toString() {
+    return 'CheckoutItemAction{Item: $item}';
+  }
+}
+
+class CheckinItemAction {
+  final Item item;
+
+  CheckinItemAction(this.item);
+
+  @override
+  String toString() {
+    return 'CheckinItemAction{Item: $item}';
   }
 }
