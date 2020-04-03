@@ -16,12 +16,12 @@ class Item {
         id = id ?? Uuid().generateV4(),
         checkedOut = checkedOut ?? false;
 
-  Item copyWith({String id, String name, String description, String bin}) {
+  Item copyWith({String id, String name, String description, String bin, bool checkedOut}) {
     return Item(
       name ?? this.name,
       bin ?? this.bin,
       id: id ?? this.id,
-      description: id ?? this.id,
+      description: description ?? this.description,
       checkedOut: checkedOut ?? this.checkedOut,
     );
   }

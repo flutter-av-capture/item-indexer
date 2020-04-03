@@ -91,23 +91,25 @@ class AddItemAction {
 }
 
 class CheckoutItemAction {
-  final Item item;
+  //final Item item;
+  final String id;
 
-  CheckoutItemAction(this.item);
+  CheckoutItemAction(this.id);
 
   @override
   String toString() {
-    return 'CheckoutItemAction{Item: $item}';
+    return 'CheckoutItemAction{Item: $id}';
   }
 }
 
 class CheckinItemAction {
-  final Item item;
+  //final Item item;
+  final String id;
 
-  CheckinItemAction(this.item);
+  CheckinItemAction(this.id);
 
   @override
   String toString() {
-    return 'CheckinItemAction{Item: $item}';
+    return 'CheckinItemAction{Item: $id}';
   }
 }
