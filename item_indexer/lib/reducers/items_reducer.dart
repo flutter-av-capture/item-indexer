@@ -39,7 +39,7 @@ List<Item> _checkinItem(List<Item> items, CheckinItemAction action) {
     return items;
   }
   final Item copiedItem = foundItem.copyWith(checkedOut: false);
-  print("Checking out item ${action.id} from bin ${foundItem.bin}");
+  print("Checking in item ${action.id} from bin ${foundItem.bin}");
     return items
       .map((item) => item.id == action.id ? copiedItem : item)
       .toList();
