@@ -12,10 +12,10 @@ typedef OnSaveCallback = void Function(String task, String note);
 class AddEditScreen extends StatefulWidget {
   final bool isEditing;
   final OnSaveCallback onSave;
-  final Todo todo;
+  final Item item;
 
   AddEditScreen(
-      {Key key, @required this.onSave, @required this.isEditing, this.todo})
+      {Key key, @required this.onSave, @required this.isEditing, this.item})
       : super(key: key ?? ArchSampleKeys.addTodoScreen);
   @override
   _AddEditScreenState createState() => _AddEditScreenState();
@@ -24,8 +24,9 @@ class AddEditScreen extends StatefulWidget {
 class _AddEditScreenState extends State<AddEditScreen> {
   static final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  String _task;
-  String _note;
+  String _itemName;
+  String _bin;
+  bool _checkedOut;
 
   bool get isEditing => widget.isEditing;
 
@@ -37,7 +38,7 @@ class _AddEditScreenState extends State<AddEditScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          isEditing ? localizations.editTodo : localizations.addTodo,
+          "Update Item"
         ),
       ),
       body: Padding(
@@ -47,7 +48,7 @@ class _AddEditScreenState extends State<AddEditScreen> {
           child: ListView(
             children: [
               TextFormField(
-                initialValue: isEditing ? widget.todo.task : '',
+                initialValue: isEditing ? widget.item.name : '',
                 key: ArchSampleKeys.taskField,
                 autofocus: !isEditing,
                 style: textTheme.headline,
@@ -59,31 +60,33 @@ class _AddEditScreenState extends State<AddEditScreen> {
                       ? localizations.emptyTodoError
                       : null;
                 },
-                onSaved: (value) => _task = value,
+                onSaved: (value) => _itemName = value,
               ),
               TextFormField(
-                initialValue: isEditing ? widget.todo.note : '',
+                initialValue: isEditing ? widget.item.bin : '',
                 key: ArchSampleKeys.noteField,
                 maxLines: 10,
                 style: textTheme.subhead,
                 decoration: InputDecoration(
                   hintText: localizations.notesHint,
                 ),
-                onSaved: (value) => _note = value,
+                onSaved: (value) => _bin = value,
               )
             ],
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: RaisedButton(
         key:
             isEditing ? ArchSampleKeys.saveTodoFab : ArchSampleKeys.saveNewTodo,
-        tooltip: isEditing ? localizations.saveChanges : localizations.addTodo,
-        child: Icon(isEditing ? Icons.check : Icons.add),
+        child: Text(
+          widget.item.checkedOut ? "Check In" : "Check Out",
+          textAlign: TextAlign.center
+        ),
         onPressed: () {
           if (_formKey.currentState.validate()) {
             _formKey.currentState.save();
-            widget.onSave(_task, _note);
+            widget.onSave(_itemName, _bin);
 
             Navigator.pop(context);
           }

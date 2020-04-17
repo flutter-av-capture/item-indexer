@@ -45,7 +45,7 @@ class _AddItemScreenState extends State<AddItemScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          isEditing ? localizations.editTodo : localizations.addTodo,
+          "Update an Item"
         ),
       ),
       body: Form(

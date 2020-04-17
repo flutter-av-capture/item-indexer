@@ -95,9 +95,9 @@ class ArchSampleLocalizations {
         locale: locale.toString(),
       );
 
-  String get editTodo => Intl.message(
-        'Edit Todo',
-        name: 'editTodo',
+  String get updateItem => Intl.message(
+        'Update Item',
+        name: 'updateItem',
         args: [],
         locale: locale.toString(),
       );

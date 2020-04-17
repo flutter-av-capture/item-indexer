@@ -5,7 +5,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:app_core/app_core.dart';
-import 'package:item_indexer/containers/edit_todo.dart';
 import 'package:item_indexer/models/models.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -84,22 +83,6 @@ class DetailsScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        key: ArchSampleKeys.editTodoFab,
-        tooltip: localizations.editTodo,
-        child: Icon(Icons.edit),
-        onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) {
-                return EditTodo(
-                  todo: todo,
-                );
-              },
-            ),
-          );
-        },
       ),
     );
   }

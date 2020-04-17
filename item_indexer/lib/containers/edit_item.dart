@@ -10,31 +10,37 @@ import 'package:item_indexer/actions/actions.dart';
 import 'package:item_indexer/models/models.dart';
 import 'package:item_indexer/presentation/add_edit_screen.dart';
 
-class EditTodo extends StatelessWidget {
-  final Todo todo;
+class EditItem extends StatelessWidget {
+  final Item item;
 
-  EditTodo({this.todo, Key key}) : super(key: key);
+  EditItem({this.item, Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState, OnSaveCallback>(
       converter: (Store<AppState> store) {
-        return (task, note) {
-          store.dispatch(UpdateTodoAction(
-            todo.id,
-            todo.copyWith(
-              task: task,
-              note: note,
-            ),
-          ));
-        };
-      },
+        
+        if(this.item.checkedOut){
+          return (name, bin) {
+            store.dispatch(CheckinItemAction(
+              item.id
+            ));
+          };
+        } else {
+          return (name, bin) {
+            store.dispatch(CheckoutItemAction(
+              item.id
+            ));
+          };
+        }
+      }
+        ,
       builder: (BuildContext context, OnSaveCallback onSave) {
         return AddEditScreen(
           key: ArchSampleKeys.editTodoScreen,
           onSave: onSave,
           isEditing: true,
-          todo: todo,
+          item: item,
         );
       },
     );

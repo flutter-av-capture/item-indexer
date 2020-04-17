@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:item_indexer/presentation/keys.dart';
+import 'package:item_indexer/containers/edit_item.dart';
 import 'package:item_indexer/models/item.dart';
 
 typedef OnSaveCallback = void Function(String task, String note);
@@ -43,7 +44,18 @@ class _ListScreenState extends State<ListScreen> {
       itemCount: items.length*2,
       itemBuilder: (context, i){
         if (i.isOdd) return Divider();
-        return _buildRow(items[(i/2).round()].toString());
+
+        return GestureDetector(
+          child: _buildRow(items[(i/2).round()].toString()),
+          onTap: () => (Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) {
+                return EditItem(
+                  item: items[(i/2).round()]
+                );
+              },
+            )
+        )));
       }
     );
   }
