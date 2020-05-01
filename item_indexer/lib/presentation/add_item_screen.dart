@@ -45,7 +45,7 @@ class _AddItemScreenState extends State<AddItemScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Update an Item"
+          "Add an Item"
         ),
       ),
       body: Form(

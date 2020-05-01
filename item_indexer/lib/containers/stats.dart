@@ -36,8 +36,8 @@ class _ViewModel {
 
   static _ViewModel fromStore(Store<AppState> store) {
     return _ViewModel(
-      numActive: numActiveSelector(todosSelector(store.state)),
-      numCompleted: numCompletedSelector(todosSelector(store.state)),
+      numActive: numTotalItems(itemsSelector(store.state)),
+      numCompleted: numCheckedOutItems(itemsSelector(store.state)),
     );
   }
 

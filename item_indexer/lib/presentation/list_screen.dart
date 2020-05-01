@@ -46,7 +46,7 @@ class _ListScreenState extends State<ListScreen> {
         if (i.isOdd) return Divider();
 
         return GestureDetector(
-          child: _buildRow(items[(i/2).round()].toString()),
+          child: _buildRow(items[(i/2).round()].name, items[(i/2).round()].bin, items[(i/2).round()].checkedOut),
           onTap: () => (Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
@@ -60,11 +60,19 @@ class _ListScreenState extends State<ListScreen> {
     );
   }
     
-  Widget _buildRow(String item){
+  Widget _buildRow(String name, String bin, bool isCheckedOut){
+    String sub = isCheckedOut ? "Bin: " + bin : "Must check out item to view bin";
     return ListTile(
       title: Text(
-        item,
-        style: _biggerFont)
+        name,
+        style: _biggerFont
+      ),
+      trailing: Icon(
+        Icons.more_horiz
+      ),
+      subtitle: Text(
+        sub
+      )
       );
     }
   }

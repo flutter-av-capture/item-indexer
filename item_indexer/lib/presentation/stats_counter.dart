@@ -35,7 +35,7 @@ class StatsCounter extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(bottom: 8.0),
             child: Text(
-              ArchSampleLocalizations.of(context).completedTodos,
+              "Checkedout Items",
               style: Theme.of(context).textTheme.title,
             ),
           ),
@@ -50,7 +50,7 @@ class StatsCounter extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(bottom: 8.0),
             child: Text(
-              ArchSampleLocalizations.of(context).activeTodos,
+              "Total Items",
               style: Theme.of(context).textTheme.title,
             ),
           ),

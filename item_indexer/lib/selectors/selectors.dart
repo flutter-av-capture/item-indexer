@@ -23,6 +23,13 @@ int numActiveSelector(List<Todo> todos) =>
 int numCompletedSelector(List<Todo> todos) =>
     todos.fold(0, (sum, todo) => todo.complete ? ++sum : sum);
 
+
+int numTotalItems(List<Item> items) =>
+    items.fold(0, (sum, item) => ++sum);
+
+int numCheckedOutItems(List<Item> items) =>
+    items.fold(0, (sum, item) => item.checkedOut ? ++sum : sum);
+
 List<Todo> filteredTodosSelector(
   List<Todo> todos,
   VisibilityFilter activeFilter,

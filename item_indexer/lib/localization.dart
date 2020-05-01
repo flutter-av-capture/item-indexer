@@ -14,7 +14,7 @@ class ReduxLocalizations {
     );
   }
 
-  String get appTitle => 'Redux Example';
+  String get appTitle => 'Item Indexer';
 }
 
 class ReduxLocalizationsDelegate
